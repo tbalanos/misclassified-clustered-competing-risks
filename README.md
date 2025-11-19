@@ -100,7 +100,7 @@ Cumulative incidence functions are reconstructed from:
 ### **1. Clone or download the repository**
 
 ```bash
-git clone https://github.com/fanispal/misclassified-clustered-competing-risks.git
+git clone https://github.com/fanismpal/misclassified-clustered-competing-risks.git
 ```
 
 ### **2. Open R or RStudio and source the scripts**
@@ -144,6 +144,7 @@ Indiana University Indianapolis.
 **Theofanis Balanos**
 Department of Biostatistics & Health Data Science
 Indiana University Indianapolis
+
 Email: tbalanos@iu.edu
 
 ---
