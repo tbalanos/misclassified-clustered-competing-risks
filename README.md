@@ -64,7 +64,7 @@ The proposed estimator:
 * adjusts for misclassification using ($p_{12}, p_{21}$)
 * handles clustering and ICS via inverse cluster-size weighting
 * yields marginal cause-specific regression effects
-* provides interpretable hazard ratios and CIFs
+* provides interpretable hazard ratios
 
 ### **3. Sensitivity Analysis ($η$-Shift)**
 
