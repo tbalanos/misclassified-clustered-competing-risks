@@ -1,4 +1,4 @@
-# **Semiparametric Marginal Regression for Clustered Competing Risks with Misclassified Causes of Failure Using External Validation**
+# **Semiparametric Marginal Regression for Clustered Competing Risks Data with Misclassified Causes of Failure Using External Validation**
 
 R code accompanying my dissertation:
 **“Semiparametric Marginal Regression for Clustered Competing Risks Data with Misclassified Causes of Failure.”**
