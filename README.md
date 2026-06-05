@@ -1,8 +1,8 @@
-# **Semiparametric Marginal Regression for Clustered Competing Risks Data with Misclassified Causes of Failure Using External Validation**
+# **Semiparametric Marginal Regression for Clustered Competing Risks Data with Misclassified Causes of Failure**
 
 R code accompanying the paper:
 
-*"Semiparametric Marginal Regression for Clustered Competing Risks Data with Misclassified Causes of Failure Using External Validation."*
+*"Semiparametric Marginal Regression for Clustered Competing Risks Data with Misclassified Causes of Failure."*
 
 This repository contains all functions and reproducible example code needed to:
 
@@ -15,9 +15,9 @@ This repository contains all functions and reproducible example code needed to:
 
 ---
 
-## **Repository Contents**
+## **Repository contents**
 
-### **Core Estimation Functions**
+### **Core estimation functions**
 
 * **`bssmle_clustered.R`**
   Implements the proposed semiparametric marginal regression estimator using a B-spline-based sieve pseudo-likelihood with inverse cluster-size weighting and externally estimated misclassification probabilities. Returns baseline cause-specific hazard spline coefficients and marginal cause-specific regression effects.
@@ -25,7 +25,7 @@ This repository contains all functions and reproducible example code needed to:
 * **`pseudo_likelihood_estimation_Mpofu.R`**
   Estimates time- and covariate-dependent misclassification probabilities using the pseudo-likelihood approach of Mpofu et al. (2020), extended here to clustered designs through inverse cluster-size weighting and a clustered bootstrap for variance estimation.
 
-### **Simulation and Example**
+### **Simulation and example**
 
 * **`simulate_data.R`**
   Generates clustered competing-risks data with frailty-based within-cluster dependence, informative cluster size, and uni- or bi-directional misclassification. Supports both external-validation and main-study simulation.
@@ -46,9 +46,9 @@ This repository contains all functions and reproducible example code needed to:
 
 ---
 
-## **Method Overview**
+## **Method overview**
 
-### **1. External Validation and Misclassification Modeling**
+### **1. External validation and misclassification modeling**
 
 Misclassification probabilities are estimated as:
 
@@ -65,7 +65,7 @@ The estimated coefficients $\hat{\gamma}_{n'}$ and their variance matrix $\hat{\
 
 ---
 
-### **2. Semiparametric Marginal Regression Model**
+### **2. Semiparametric marginal regression model**
 
 The proposed estimator:
 
@@ -78,7 +78,7 @@ The proposed estimator:
 
 ---
 
-### **3. Sensitivity Analysis (η-Shift)**
+### **3. Sensitivity analysis (η-shift)**
 
 To examine violations of the transportability assumption, misclassification probabilities in the main dataset are adjusted via
 
@@ -96,7 +96,7 @@ Readers interested in the underlying rationale for this sensitivity analysis are
 
 ---
 
-### **4. Cluster Bootstrap with Uncertainty in Misclassification Parameters**
+### **4. Cluster bootstrap with uncertainty in misclassification marameters**
 
 Inference is carried out using a clustered bootstrap that accounts for two sources of variability:
 
@@ -113,7 +113,7 @@ Importantly, the procedure does **not** require access to the original external 
 
 ---
 
-### **5. CIF Computation**
+### **5. CIF computation**
 
 Cumulative incidence functions are reconstructed using:
 
@@ -123,7 +123,7 @@ Cumulative incidence functions are reconstructed using:
 
 ---
 
-## **How to Run the Example**
+## **How to run the example**
 
 ### **1. Clone or download the repository**
 
@@ -159,11 +159,11 @@ example_analysis_clustered.html
 
 If you use this code in your research, please cite:
 
-Balanos T, Yiannoutsos CT, Pabon-Rodriguez FM, Nan H, Bakoyannis G. *Semiparametric Marginal Regression for Clustered Competing Risks Data with Misclassified Causes of Failure Using External Validation Data.* 2026.
+Balanos T, Yiannoutsos CT, Bakoyannis G. *Semiparametric Marginal Regression for Clustered Competing Risks Data with Misclassified Causes of Failure.* 2026.
 
 (Full journal citation will be added once published.)
 
-### **Related Work**
+### **Related work**
 
 Balanos T, Yiannoutsos CT, Pabon-Rodriguez FM, Nan H, Bakoyannis G. *Semiparametric Regression for Misclassified Competing Risks Data.* arXiv preprint arXiv:2605.16652. 2026. <https://doi.org/10.48550/arXiv.2605.16652>
 
