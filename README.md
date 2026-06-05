@@ -7,7 +7,7 @@ R code accompanying the paper:
 This repository contains all functions and reproducible example code needed to:
 
 1. Simulate clustered competing-risks data with within-cluster dependence and informative cluster size (ICS).
-2. Estimate time- and covariate-dependent misclassification probabilities from an external validation sample, with clustering and ICS accounted for via inverse cluster-size weighting and a cluster bootstrap.
+2. Estimate time- and covariate-dependent misclassification probabilities from an external validation sample, with clustering and ICS accounted for via inverse cluster-size weighting and GEE with a working independence correlation structure and a sandwich variance estimator.
 3. Fit the proposed semiparametric marginal regression model that simultaneously corrects for misclassification of the cause of failure, within-cluster dependence, and ICS.
 4. Conduct sensitivity analyses to assess robustness against violations of the transportability assumption.
 5. Perform cluster-bootstrap inference that also accounts for the uncertainty in the externally estimated misclassification probabilities.
@@ -23,7 +23,7 @@ This repository contains all functions and reproducible example code needed to:
   Implements the proposed semiparametric marginal regression estimator using a B-spline-based sieve pseudo-likelihood with inverse cluster-size weighting and externally estimated misclassification probabilities. Returns baseline cause-specific hazard spline coefficients and marginal cause-specific regression effects.
 
 * **`pseudo_likelihood_estimation_Mpofu.R`**
-  Estimates time- and covariate-dependent misclassification probabilities using the pseudo-likelihood approach of Mpofu et al. (2020), extended here to clustered designs through inverse cluster-size weighting and a clustered bootstrap for variance estimation.
+  Estimates time- and covariate-dependent misclassification probabilities using the pseudo-likelihood approach of Mpofu et al. (2020), extended here to clustered designs through inverse cluster-size weighting and GEE with a working independence correlation structure and a sandwich variance estimator.
 
 ### **Simulation and example**
 
@@ -59,7 +59,7 @@ using a pseudo-likelihood framework with:
 * logistic regression for predictive values,
 * logistic regression for misclassification,
 * inverse cluster-size weighting to address ICS,
-* a clustered bootstrap to account for within-cluster dependence.
+* GEE with a working independence correlation structure and a sandwich variance estimator to account for within-cluster dependence.
 
 The estimated coefficients $\hat{\gamma}_{n'}$ and their variance matrix $\hat{\Omega}_{n'}$ are then carried into the main analysis to compute predicted misclassification probabilities for each subject.
 
@@ -96,9 +96,9 @@ Readers interested in the underlying rationale for this sensitivity analysis are
 
 ---
 
-### **4. Cluster bootstrap with uncertainty in misclassification marameters**
+### **4. Cluster bootstrap with uncertainty in misclassification parameters**
 
-Inference is carried out using a clustered bootstrap that accounts for two sources of variability:
+Inference for the main regression model is carried out using a clustered bootstrap that accounts for two sources of variability:
 
 * **Sampling variability** in the main study, addressed by resampling entire clusters (with replacement).
 * **Uncertainty in the externally estimated misclassification parameters** $\hat{\gamma}_{n'}$, addressed by drawing a new realization $\tilde{\gamma}_{n'}^{(b)} \sim N(\hat{\gamma}_{n'}, \hat{\Omega}_{n'})$ at each bootstrap iteration, recomputing the misclassification probabilities, and then re-fitting the model.
