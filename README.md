@@ -82,7 +82,7 @@ The proposed estimator:
 
 To examine violations of the transportability assumption, misclassification probabilities in the main dataset are adjusted via
 
-$\text{logit}(p_{jh}(\eta)) = \text{logit}(p_{jh}) + \eta$, with $\eta \in \{-0.5, -0.25, 0, 0.25, 0.5\}$.
+$\text{logit}(p_{jh}(\eta)) = \text{logit}(p_{jh}) + \eta$, with $`\eta \in \{-0.5, -0.25, 0, 0.25, 0.5\}`$.
 
 Each modified misclassification scenario yields a new set of regression estimates, allowing assessment of robustness when the misclassification mechanism in the main study differs from that in the validation study.
 
