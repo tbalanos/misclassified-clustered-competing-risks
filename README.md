@@ -61,7 +61,7 @@ using a pseudo-likelihood framework with:
 * inverse cluster-size weighting to address ICS,
 * GEE with a working independence correlation structure and a sandwich variance estimator to account for within-cluster dependence.
 
-The estimated coefficients \(\hat{\gamma}_{n'}\) and their variance matrix $\hat{\Omega}_{n'}$ are then carried into the main analysis to compute predicted misclassification probabilities for each subject.
+The estimated coefficients $\hat{\gamma}_{n'}$ and their variance matrix $\hat{\Omega}_{n'}$ are then carried into the main analysis to compute predicted misclassification probabilities for each subject.
 
 ---
 
@@ -82,8 +82,7 @@ The proposed estimator:
 
 To examine violations of the transportability assumption, misclassification probabilities in the main dataset are adjusted via
 
-$$ \operatorname{logit}(p_{jh}(\eta)) = \operatorname{logit}(p_{jh}) + \eta,
-\quad \eta \in \{-0.5, -0.25, 0, 0.25, 0.5\}$$. 
+$\text{logit}(p_{jh}(\eta)) = \text{logit}(p_{jh}) + \eta$, with $\eta \in \{-0.5, -0.25, 0, 0.25, 0.5\}$.
 
 Each modified misclassification scenario yields a new set of regression estimates, allowing assessment of robustness when the misclassification mechanism in the main study differs from that in the validation study.
 
