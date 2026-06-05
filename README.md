@@ -101,7 +101,7 @@ Readers interested in the underlying rationale for this sensitivity analysis are
 Inference for the main regression model is carried out using a clustered bootstrap that accounts for two sources of variability:
 
 * **Sampling variability** in the main study, addressed by resampling entire clusters (with replacement).
-* **Uncertainty in the externally estimated misclassification parameters** $\hat{\gamma}_{n'}$, addressed by drawing a new realization $\tilde{\gamma}_{n'}^{(b)} \sim N(\hat{\gamma}_{n'}, \hat{\Omega}_{n'})$ at each bootstrap iteration, recomputing the misclassification probabilities, and then re-fitting the model.
+* **Uncertainty in the externally estimated misclassification parameters** $`\hat{\gamma}_{n'}`$, addressed by drawing a new realization $`\tilde{\gamma}_{n'}^{(b)} \sim N(\hat{\gamma}_{n'}, \hat{\Omega}_{n'})`$ at each bootstrap iteration, recomputing the misclassification probabilities, and then re-fitting the model.
 
 This combined procedure yields:
 
@@ -109,7 +109,7 @@ This combined procedure yields:
 * Wald statistics,
 * confidence intervals.
 
-Importantly, the procedure does **not** require access to the original external validation data: only the estimate $\hat{\gamma}_{n'}$ and its variance matrix $\hat{\Omega}_{n'}$ are needed.
+Importantly, the procedure does **not** require access to the original external validation data: only the estimate $`\hat{\gamma}_{n'}`$ and its variance matrix $`\hat{\Omega}_{n'}`$ are needed.
 
 ---
 
