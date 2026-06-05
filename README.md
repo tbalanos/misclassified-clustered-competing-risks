@@ -61,7 +61,7 @@ using a pseudo-likelihood framework with:
 * inverse cluster-size weighting to address ICS,
 * GEE with a working independence correlation structure and a sandwich variance estimator to account for within-cluster dependence.
 
-The estimated coefficients $\hat{\gamma}_{n'}$ and their variance matrix $\hat{\Omega}_{n'}$ are then carried into the main analysis to compute predicted misclassification probabilities for each subject.
+The estimated coefficients $`\hat{\gamma}_{n'}`$ and their variance matrix $`\hat{\Omega}_{n'}`$ are then carried into the main analysis to compute predicted misclassification probabilities for each subject.
 
 ---
 
